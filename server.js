@@ -11,9 +11,11 @@ const methodOverride = require('method-override')
 // Allows for the use of css in the public folder
 app.use('/static', express.static("public"))
 
-
 // // Allows us to use the delete Method
-// app.use(methodOverride('_method'))
+app.use(methodOverride('_method'))
+
+
+
 
 // HOME Route
 app.get('/', (req, res) => res.redirect('/budgets/'))
@@ -28,18 +30,24 @@ app.get('/budgets/', (req, res) => {
     )
 })
 
+// NEW Route
+app.get('/budgets/new', (req,res) => {
+    res.render('new.ejs')
+})
+
+// CREATE Route
+app.post('/budgets', (req, res) =>{
+    budgets.push(req.body)
+
+    res.redirect('/budgets')
+})
+
 // SHOW Route
 app.get('/budgets/:index', (req,res) => {
     res.render('show.ejs', {
         budget: budgets[req.params.index],
         index: req.params.index
     })
-})
-
-
-// NEW Route
-app.get(`/budgets/new`, (req,res) => {
-    res.render('new.ejs')
 })
 
 
