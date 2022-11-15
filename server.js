@@ -1,12 +1,16 @@
+require("dotenv").config()
 const express = require("express")
 const app = express()
 const PORT = process.env.PORT
 
 
-// Index Route
+// HOME Route
 app.get('/', (req, res) => res.redirect('/budgets'))
 
-
+// INDEX Route
+app.get('/budgets/', (req, res) => {
+    res.render('index.ejs')
+})
 
 
 
