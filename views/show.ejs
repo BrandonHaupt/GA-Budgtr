@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./partials/head.ejs") %>
+  </head>
+  <body>
+
+    <div class="container">
+        <h1><%=budget.name %> </h1>
+        <a class="button" href="/budgets">Back</a>
+
+        <ul>
+            <li><strong>date</strong></li>
+                <ul>
+                    <li><%=budget.date %> </li>
+                </ul>
+            <li><strong>name</strong></li>
+                <ul>
+                    <li><%=budget.name %> </li>
+                </ul>
+            <li><strong>from</strong></li>
+                <ul>
+                    <li><%=budget.from %> </li>
+                </ul>
+            <li><strong>amount</strong></li>
+                <ul>
+                    <li><%=budget.amount %> </li>
+                </ul>
+            <li><strong>tags</strong></li>
+                <ul>
+                    <li><%=budget.tags %> </li>
+                </ul>
+        </ul>
+        
+    </div>
+
+
+  </body>
+</html>

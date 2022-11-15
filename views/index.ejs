@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <title>Budgtr</title>
-
-    <link rel="stylesheet" href="/public/normalize.css" />
-    <link rel="stylesheet" href="/public/skeleton.css" />
+    <%- include("./partials/head.ejs") %>
   </head>
   <body>
-    <h1>Hello World!</h1>
+
+    <div class="container">
+        <h1>Budgtr All</h1>
+        <a class="button" href="/budgets/new">New Item</a>
+
+        <% for(let i = 0; i < allBudgets.length; i++) { %> 
+
+        <table class="u-full-width">
+            <tbody>
+              <tr>
+                <td><%=allBudgets[i].date %></td>
+                <td><a href="/budgets/<%=i %> "><%=allBudgets[i].name %></a></td>
+                <td><%=allBudgets[i].amount%></td>
+              </tr>
+            </tbody>
+          </table>
+
+        <% } %> 
+    </div>
+
+
   </body>
 </html>
