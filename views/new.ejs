@@ -4,34 +4,37 @@
     <%- include("./partials/head.ejs") %>
   </head>
   <body>
-
-    <nav>
-        <a class="button" href="/budgets">Back</a>
-    </nav>
-
     <div class="container">
         <h1>Add a new item </h1>
+        <nav>
+            <a class="button" href="/budgets">Back</a>
+        </nav>
         
         <form action="/budgets" method="POST">
             <div class="row">
                 <div class="six columns">
-                    <label for="date">Date</label>
-                </div>
-                <div class="six columns">
-                    <label for="name">Name</label>
-                </div>
-                <div class="six columns">
-                    <label for="amount">Amount</label>
-                </div>
-                <div class="six columns">
-                    <label for="from">From</label>
+                    <input class="u-full-width" type="text" placeholder="Date" name="date">
+            
+                    <input class="u-full-width" type="text" placeholder="Name" name="name">
+               
+                    <input class="u-full-width" type="text" placeholder="Amount" name="amount">
+               
+                    <input class="u-full-width" type="text" placeholder="From" name="from">
                 </div>
             </div>
             <input class="button" type="submit" value="CREATE NEW ITEM">
         </form>
-        
-    </div>
 
+        
+        <!-- <form action="/budgets" method="POST">
+            date: <input type="text" name="date" /><br />
+            name: <input type="text" name="name" /><br />
+            amount: <input type="text" name="amount" /><br />
+            from: <input type="text" name="from" /><br />
+           
+            <input type="submit" value="Create Fruit" />
+        </form> -->
+    </div>
 
   </body>
 </html>

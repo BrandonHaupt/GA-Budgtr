@@ -8,6 +8,9 @@ const methodOverride = require('method-override')
 
 // MIDDLEWARE
 
+//Parses data from a form submission into req.body
+app.use(express.urlencoded({extended:true})) 
+
 // Allows for the use of css in the public folder
 app.use('/static', express.static("public"))
 
@@ -37,8 +40,13 @@ app.get('/budgets/new', (req,res) => {
 
 // CREATE Route
 app.post('/budgets', (req, res) =>{
+
+    // console.log(req.body)
+
+    // Pushes the new budget into the budgets array
     budgets.push(req.body)
 
+    // redirects to the index page
     res.redirect('/budgets')
 })
 
